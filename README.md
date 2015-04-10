@@ -11,4 +11,3 @@ TODO
 ## Credits
 
 Many thanks to Patrick Byrne for making http://cronchecker.net/
-
