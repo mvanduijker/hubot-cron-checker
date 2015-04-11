@@ -2,7 +2,7 @@
 #   Let hubot explain crontab entry in normal english from cronchecker.net
 #
 # Commands:
-#   hubot explain me cron - Explains the cron <cron entry>
+#   hubot explain me cron <cron entry> - Explains the cron <cron entry>
 #
 # Dependencies:
 #   "cheerio": "^0.19.0"
