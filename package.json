@@ -1,6 +1,6 @@
 {
   "name": "hubot-cron-checker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Let hubot explain crontab entry in normal english",
   "main": "index.coffee",
   "scripts": {
