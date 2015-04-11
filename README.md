@@ -1,13 +1,24 @@
 # Hubot Cron Checker
 
 [![Build Status](https://travis-ci.org/mvanduijker/hubot-cron-checker.svg)](https://travis-ci.org/mvanduijker/hubot-cron-checker)
+[![npm version](https://badge.fury.io/js/hubot-cron-checker.svg)](http://badge.fury.io/js/hubot-cron-checker)
 
-Explains crontab entry in normal english from http://cronchecker.net/
+Explains crontab entry in normal english using http://cronchecker.net
+
+## Usage
+
+For help `hubot exlain me cron`
+
+`hub expalin me cron <cron entry>` to translate the cron entry in plain english. For example `hub expalin me cron 0 0 * * * some_report.sh`
 
 ## Installation
 
-TODO
+```bash
+npm install --save hubot-cron-checker
+```
+
+Add `hubot-cron-checker` to your `external-scripts.json` file.
 
 ## Credits
 
-Many thanks to Patrick Byrne for making http://cronchecker.net/
+Many thanks to [Patrick Byrne](https://github.com/pbyrne) for making http://cronchecker.net
