@@ -9,7 +9,7 @@ Explains crontab entry in normal english using http://cronchecker.net
 
 For help `hubot exlain me cron`
 
-`hub expalin me cron <cron entry>` to translate the cron entry in plain english. For example `hub expalin me cron 0 0 * * * some_report.sh`
+`hubot explain me cron <cron entry>` to translate the cron entry in plain english. For example `hubot explain me cron 0 0 * * * some_report.sh`
 
 ## Installation
 
