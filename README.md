@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/mvanduijker/hubot-cron-checker.svg)](https://travis-ci.org/mvanduijker/hubot-cron-checker)
 [![npm version](https://badge.fury.io/js/hubot-cron-checker.svg)](http://badge.fury.io/js/hubot-cron-checker)
 
-Explains crontab entry in normal english using http://cronchecker.net
+Explains crontab entry in normal english using [prettycron](https://github.com/azza-bazoo/prettycron)
 
 ## Usage
 
@@ -19,6 +19,3 @@ npm install --save hubot-cron-checker
 
 Add `hubot-cron-checker` to your `external-scripts.json` file.
 
-## Credits
-
-Many thanks to [Patrick Byrne](https://github.com/pbyrne) for making http://cronchecker.net

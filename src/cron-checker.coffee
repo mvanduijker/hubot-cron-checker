@@ -1,19 +1,17 @@
 # Description:
-#   Let hubot explain crontab entry in normal english from cronchecker.net
+#   Let hubot explain crontab entry in normal english using prettycron
 #
 # Commands:
 #   hubot explain me cron <cron entry> - Explains the cron <cron entry>
 #
 # Dependencies:
-#   "cheerio": "^0.19.0"
+#   "prettycron": "^0.10.0"
 #
 # Authors:
 #   mvanduijker
 
 
-cheerio = require('cheerio')
-croncheckerBaseUrl = 'http://cronchecker.net/check?statement='
-
+prettyCron = require('prettycron')
 module.exports = (robot) ->
 
   robot.hear /explain me cron$/i, (msg) ->
@@ -22,18 +20,16 @@ module.exports = (robot) ->
   robot.hear /explain me cron( .*)/i, (msg) ->
     if msg.match[1]? and msg.match[1].trim()
       cronText = msg.match[1].trim()
+      cronSplitted = cronText.split(' ')
 
-      msg.http(croncheckerBaseUrl + cronText).get() (error, response, body)->
-        return msg.send "Sorry, something went wrong. http://croncheck.net still working?" if (error or response.statusCode not in [200, 302])
+      return msg.send "Invalid cron statement" if cronSplitted.length < 5
 
-        return msg.send "Unrecognized cron statement `#{cronText}`" if response.statusCode == 302
+      cronParameters = cronSplitted.slice(0, 5).join(' ')
+      cronExplain = prettyCron.toString(cronParameters)
 
-        $ = cheerio.load(body)
+      return msg.send "#{cronExplain}" if cronSplitted.length is 5
 
-        cronExplained = $('.cron-result')
-          .html()
-          .trim()
-          .replace(/(?:\r\n|\r|\n)/g, ' ')
-          .replace(/(<(\/?)code>)/g, '`')
+      cronExplain = cronExplain.charAt(0).toLowerCase() + cronExplain.slice(1)
+      cronCommand = cronSplitted.slice(6).join(' ')
 
-        return msg.send cronExplained
+      return msg.send "The command #{cronCommand} will execute at #{cronExplain}"
