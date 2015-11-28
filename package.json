@@ -1,6 +1,6 @@
 {
   "name": "hubot-cron-checker",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Let hubot explain crontab entry in normal english",
   "main": "index.coffee",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/mvanduijker/hubot-cron-checker",
   "dependencies": {
-    "cheerio": "^0.19.0",
+    "prettycron": "^0.10.0",
     "coffee-script": "~1.6"
   },
   "devDependencies": {
